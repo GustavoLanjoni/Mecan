@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Orçamento - Mecânica</title>
+  <link rel="stylesheet" href="orcamentoCss.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Solicitar Orçamento</h2>
+    <form action="/orcamento" method="POST">
+      <label for="veiculo">Veículo</label>
+      <input type="text" id="veiculo" name="veiculo" required>
+
+      <label for="servico">Serviço</label>
+      <select id="servico" name="servico" required>
+        <option value="troca_oleo">Troca de Óleo</option>
+        <option value="alinhamento">Alinhamento</option>
+        <option value="revisao">Revisão Geral</option>
+      </select>
+
+      <label for="descricao">Descrição (opcional)</label>
+      <textarea id="descricao" name="descricao" rows="4"></textarea>
+
+      <button type="submit">Solicitar Orçamento</button>
+    </form>
+  </div>
+</body>
+</html>
