@@ -7,21 +7,23 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000000;
+    background-color: #121212; /* Cor de fundo mais escura para um visual moderno */
     color: #fff;
-    padding-top: 100px; /* Compensa o header fixo */
+    padding-top: 80px; /* Ajuste do topo para o header fixo */
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #000000;
-    padding: 20px;
+    background-color: #1a1a1a; /* Cor mais suave para o cabeçalho */
+    padding: 15px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: background-color 0.3s;
 }
 
 /* Container principal do header */
@@ -34,6 +36,11 @@ header {
 /* Logo */
 .logo img {
     height: 50px;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Efeito de zoom no logo ao passar o mouse */
 }
 
 /* Menu container */
@@ -42,7 +49,7 @@ header {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 70px; /* Ajuste conforme o header */
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: #333;
@@ -71,9 +78,9 @@ header {
 .menu a {
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 8px 20px;
     border-radius: 4px;
     transition: color 0.3s, background-color 0.3s;
 }
@@ -136,56 +143,43 @@ header {
 
 /* Imagem principal */
 .imgP {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-}
 
+    background-position: center -50px; /* Move a imagem 50px para cima */
+    position: relative;
+    width: 100%;
+    background-image: url('luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg'); /* Caminho para a imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: scroll; /* Usar scroll para garantir melhor desempenho em dispositivos móveis */
+}
 .imgP img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
-    filter: brightness(0.2); /* Reduz o brilho para 50% */
+
 }
 
-/* Estilo para o título e descrição "SERVIÇOS" */
-.textoPrincipal {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 150px; /* Ajuste para o header fixo */
-    padding: 0 50px;
-    text-align: left;
+
+/* Container e botão agendar */
+.btn-agendar-container {
+    text-align: center;
+    margin-top: 30px;
 }
 
-.textoPrincipal .titulo {
-    font-size: 48px; /* Tamanho do título */
-    font-weight: bold;
-    color: #fff;
-}
-
-.textoPrincipal .descricao {
-    max-width: 500px;
-    font-size: 16px;
-    color: #fff;
-}
-
-/* Estilo para a lista com bolinhas */
-.servicos-1 ul {
-    margin-top: 40px;
-    list-style-type: disc;
-    padding-left: 40px;
-    color: #fff;
-}
-
-.servicos-1 li {
+.btn-agendar {
     font-size: 18px;
-    margin-bottom: 10px;
-    text-align: left;
+    background-color: #ff5900;
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-agendar:hover {
+    background-color: #e65000;
+    transform: scale(1.05);
 }
 
 /* Media query para responsividade */
@@ -206,23 +200,12 @@ header {
         display: none;
     }
 
-    .textoPrincipal {
-        flex-direction: column; /* Empilha o conteúdo */
-        text-align: center;
-        padding: 0 20px;
+    .textoPrincipal h2 {
+        font-size: 2rem;
     }
 
-    .textoPrincipal .titulo {
-        font-size: 36px; /* Ajusta o tamanho do título no mobile */
-    }
-
-    .textoPrincipal .descricao {
-        font-size: 14px;
-        max-width: 100%; /* Largura total no mobile */
-    }
-
-    .servicos-1 ul {
-        padding-left: 10px; /* Ajuste no mobile */
+    .textoPrincipal p {
+        font-size: 1rem;
     }
 }
 
@@ -252,4 +235,48 @@ header {
     .hamburger {
         display: none;
     }
+
+    .btn-agendar-container {
+        margin-top: 50px;
+    }
+}
+
+/* Espaçamento e alinhamento da seção de contato */
+.textoPrincipal h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.textoPrincipal h1 a {
+    color: #ff5900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.textoPrincipal h1 a:hover {
+    color: #e65000;
+}
+
+/* Botão de ação */
+.btn-agendar-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-agendar {
+    font-size: 18px;
+    background-color: #ff5900;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-agendar:hover {
+    background-color: #e65000;
+    transform: scale(1.05);
 }
