@@ -143,15 +143,16 @@ header {
 
 /* Imagem principal */
 .imgP {
-
-    background-position: center -50px; /* Move a imagem 50px para cima */
+    background-position: center -20px; /* Menor valor para mover a imagem mais para cima */
     position: relative;
-    width: 100%;
-    background-image: url('luxury-car-speeds-by-modern-building-dusk-generative-ai.jpg'); /* Caminho para a imagem */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: scroll; /* Usar scroll para garantir melhor desempenho em dispositivos móveis */
+    width: 100%; /* Ajuste a altura conforme necessário */
+    background-image: url('');
+    background-size: cover;
+    background-attachment: scroll;
+    margin-top: -40px; /* Move a imagem para cima em relação ao topo */
 }
+
+
 .imgP img {
     width: 100%;
     object-fit: cover;
