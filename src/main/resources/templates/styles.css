@@ -149,7 +149,12 @@ header {
     background-image: url('');
     background-size: cover;
     background-attachment: scroll;
-    margin-top: -40px; /* Move a imagem para cima em relação ao topo */
+    margin-top: -50px; /* Move a imagem para cima em relação ao topo */
+    transform: scaleX(-1);
+    height: 900px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+
+
 }
 
 
@@ -159,6 +164,38 @@ header {
 
 }
 
+/* Texto */
+.texto-img {
+    position: absolute; /* Permite posicionar no lado desejado */
+    top: 10%;
+    right: 5%; /* Move os textos para o lado direito da tela */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    color: #fff;
+    z-index: 10;
+    transform: scaleX(-1)
+    
+}
+
+.texto-img h1, .texto-img h2, .texto-img p {
+    margin-bottom: 15px;
+}
+
+.texto-img .btn-agendar {
+    font-size: 18px;
+    background-color: #ff5900;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.texto-img .btn-agendar:hover {
+    background-color: #e65000;
+    transform: scale(1.05);
+}
 
 /* Container e botão agendar */
 .btn-agendar-container {
@@ -185,30 +222,70 @@ header {
 
 /* Media query para responsividade */
 @media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .imgP {
+        height: 900px; /* Ajusta a altura da imagem para telas menores */
+        width: 900px;
+        margin-left: -2pc;
+        margin-top: -50px; /* Ajusta o espaço superior */
+        font-size: 2rem
+    }
+    
+    .imgP img {
+        object-fit: cover; /* Faz a imagem se ajustar ao tamanho do container */
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .btn-orcamento {
+
+        display: none;
+
+    }
+
     .menu-container {
         display: none;
     }
 
-    .menu-container.active {
-        display: flex;
-    }
-
     .hamburger {
         display: flex;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 1001;
     }
 
-    .btn-orcamento {
-        display: none;
+    .texto-img {
+        left: 10%;
     }
 
-    .textoPrincipal h2 {
-        font-size: 2rem;
+    .texto-img h1 {
+        font-size: 1.5rem;
     }
 
-    .textoPrincipal p {
-        font-size: 1rem;
+    .texto-img h2 {
+        font-size: 1.2rem;
+    }
+
+    .texto-img p {
+        font-size: 0.8rem;
+    }
+
+    .btn-agendar {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .imgP {
+        height: 400px;
     }
 }
+
 
 @media (min-width: 769px) {
     .menu-container {
@@ -281,3 +358,5 @@ header {
     background-color: #e65000;
     transform: scale(1.05);
 }
+
+
