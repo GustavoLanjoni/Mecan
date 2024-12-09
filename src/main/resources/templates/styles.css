@@ -1,0 +1,176 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    padding-top: 100px; /* Adiciona um padding para compensar o header fixo */
+}
+
+/* Header */
+header {
+    background-color: #000000;
+    color: black;
+    padding: 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Faz o cabeçalho ficar acima da imagem */
+}
+
+/* Container principal do header */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+    margin-left: auto;
+}
+
+/* Menu */
+.menu-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* Menu itens */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menu li a:hover {
+    color: #007BFF;
+}
+
+/* Botão de orçamento */
+.btn-orcamento {
+    font-size: 20px;
+    background-color: transparent;
+    border-color: #ff5900;
+    color: #fd5900;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-orcamento:hover {
+    color: #e65000;
+    transform: scale(1.05);
+}
+
+/* Menu hambúrguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        padding-top: 20px; /* Ajuste do padding para o header */
+    }
+
+    .menu-container {
+        order: -1;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .btn-orcamento {
+        display: none;
+    }
+
+    .logo img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Estilização para a imagem */
+.imgP {
+    position: fixed; /* Fixar a imagem */
+    top: 0; /* A imagem começa no topo da tela */
+    left: 0; /* A imagem estará no lado esquerdo da tela */
+    width: 70vw; /* Ajuste a largura da imagem conforme necessário */
+    height: auto; /* A altura será ajustada proporcionalmente */
+    z-index: -1; /* Colocar a imagem atrás de outros elementos */
+}
+
+.imgP img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garantir que a imagem preencha a área sem distorção */
+}
+/* Animação do hambúrguer */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
