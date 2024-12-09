@@ -8,20 +8,20 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #000000;
-    padding-top: 100px; /* Adiciona um padding para compensar o header fixo */
+    color: #fff;
+    padding-top: 100px; /* Compensa o header fixo */
 }
 
 /* Header */
 header {
     background-color: #000000;
-    color: black;
-    padding: 50px 20px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Faz o cabeçalho ficar acima da imagem */
+    z-index: 1000;
 }
 
 /* Container principal do header */
@@ -29,48 +29,65 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 /* Logo */
 .logo img {
     height: 50px;
-    margin-left: auto;
 }
 
-/* Menu */
+/* Menu container */
 .menu-container {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+    display: none; /* Esconde o menu por padrão no mobile */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px; /* Ajuste conforme o header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
 }
 
-/* Menu itens */
+/* Menu visível quando ativo */
+.menu-container.active {
+    display: flex;
+}
+
+/* Lista de itens do menu */
 .menu {
-    display: flex;
-    gap: 20px;
     list-style: none;
+    text-align: center;
+    width: 100%;
 }
 
-.menu li a {
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #fff;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     padding: 8px 12px;
     border-radius: 4px;
     transition: color 0.3s, background-color 0.3s;
 }
 
-.menu li a:hover {
-    color: #007BFF;
+.menu a:hover {
+    background-color: #ff5900;
+    color: #fff;
 }
 
 /* Botão de orçamento */
 .btn-orcamento {
-    font-size: 20px;
+    font-size: 16px;
     background-color: transparent;
-    border-color: #ff5900;
+    border: 2px solid #ff5900;
     color: #fd5900;
     padding: 10px 15px;
     text-decoration: none;
@@ -84,53 +101,101 @@ header {
     transform: scale(1.05);
 }
 
-/* Menu hambúrguer */
+/* Botão hambúrguer */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
-    width: 28px;
-    height: 3px;
-    background-color: #000000;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: all 0.3s ease;
 }
 
-/* Menu mobile */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: row;
-        align-items: center;
-        padding-top: 20px; /* Ajuste do padding para o header */
-    }
+/* Animação do hambúrguer ao ativar */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
 
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Imagem principal */
+.imgP {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.imgP img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2); /* Reduz o brilho para 50% */
+}
+
+/* Estilo para o título e descrição "SERVIÇOS" */
+.textoPrincipal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 150px; /* Ajuste para o header fixo */
+    padding: 0 50px;
+    text-align: left;
+}
+
+.textoPrincipal .titulo {
+    font-size: 48px; /* Tamanho do título */
+    font-weight: bold;
+    color: #fff;
+}
+
+.textoPrincipal .descricao {
+    max-width: 500px;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Estilo para a lista com bolinhas */
+.servicos-1 ul {
+    margin-top: 40px;
+    list-style-type: disc;
+    padding-left: 40px;
+    color: #fff;
+}
+
+.servicos-1 li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Media query para responsividade */
+@media (max-width: 768px) {
     .menu-container {
-        order: -1;
-        display: flex;
-        justify-content: flex-start;
-        gap: 20px;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         display: none;
     }
 
-    .menu.active {
+    .menu-container.active {
         display: flex;
-    }
-
-    .menu li {
-        margin-bottom: 10px;
     }
 
     .hamburger {
@@ -141,36 +206,50 @@ header {
         display: none;
     }
 
-    .logo img {
-        margin-left: auto;
-        margin-right: auto;
+    .textoPrincipal {
+        flex-direction: column; /* Empilha o conteúdo */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .textoPrincipal .titulo {
+        font-size: 36px; /* Ajusta o tamanho do título no mobile */
+    }
+
+    .textoPrincipal .descricao {
+        font-size: 14px;
+        max-width: 100%; /* Largura total no mobile */
+    }
+
+    .servicos-1 ul {
+        padding-left: 10px; /* Ajuste no mobile */
     }
 }
 
-/* Estilização para a imagem */
-.imgP {
-    position: fixed; /* Fixar a imagem */
-    top: 0; /* A imagem começa no topo da tela */
-    left: 0; /* A imagem estará no lado esquerdo da tela */
-    width: 70vw; /* Ajuste a largura da imagem conforme necessário */
-    height: auto; /* A altura será ajustada proporcionalmente */
-    z-index: -1; /* Colocar a imagem atrás de outros elementos */
-}
+@media (min-width: 769px) {
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        justify-content: flex-end;
+        width: auto;
+        padding: 0;
+    }
 
-.imgP img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garantir que a imagem preencha a área sem distorção */
-}
-/* Animação do hambúrguer */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
 
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
+    .menu li {
+        margin: 0;
+    }
 
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    .hamburger {
+        display: none;
+    }
 }

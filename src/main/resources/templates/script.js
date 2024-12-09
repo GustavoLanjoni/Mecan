@@ -1,5 +1,7 @@
-// script.js
-document.querySelector(".hamburger").addEventListener("click", () => {
-    const menu = document.querySelector(".menu ul");
-    menu.classList.toggle("active");
+const hamburger = document.querySelector('.hamburger');
+const menuContainer = document.querySelector('.menu-container');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuContainer.classList.toggle('active');
 });
