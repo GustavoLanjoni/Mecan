@@ -18,7 +18,7 @@ header {
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: space-between; /* Espaço entre a logo e o menu */
-    padding: 30px 20px; /* Reduzido para diminuir altura */
+    padding: 20px 20px; /* Reduzido para diminuir altura */
     position: fixed;
     top: 0;
     width: 100%;
@@ -28,20 +28,16 @@ header {
 
 .header-content {
     display: flex;
-    justify-content: flex-end; /* Mover o menu para a direita */
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between; /* Distribui o conteúdo para as extremidades */
+    align-items: center; /* Alinha verticalmente */
+    padding: 10px 20px;
 }
 
 .logo img {
-    
     max-width: 250px; /* Ajuste a largura máxima do logo */
     height: auto; /* Mantém a proporção */
     object-fit: contain; /* Ajusta o comportamento da imagem */
     display: block;
-    
-
 }
 
 .menu-container {
@@ -179,11 +175,12 @@ header {
 }
 
 /* Responsividade para dispositivos móveis */
+/* Responsividade para dispositivos móveis */
 @media screen and (max-width: 768px) {
     /* Estilizando o cabeçalho para dispositivos móveis */
     .header-content {
-        flex-direction: column;
-        align-items: flex-end; /* Move o conteúdo para a direita em dispositivos móveis */
+        margin-left: 50%;
+        justify-content: flex-end; /* Adiciona para garantir o alinhamento à direita */
     }
 
     .menu-container {
@@ -209,7 +206,7 @@ header {
     }
 
     .menu li {
-        margin: 10px 0;
+        margin-left: 10px 0;
     }
 
     .hamburger {
@@ -260,6 +257,7 @@ header {
         font-size: 16px;
     }
 }
+
 
 /* Estilizando o contêiner dos quadrados */
 .quadrados-container {
