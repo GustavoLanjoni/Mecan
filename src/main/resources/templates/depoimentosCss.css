@@ -1,0 +1,184 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 60px; /* Espaço para o cabeçalho fixo */
+}
+
+/* Ajuste no cabeçalho para centralização */
+header {
+    background-color: #232323;
+    color: white;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+}
+
+/* Ajuste na navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Mantém a navegação e o ícone do menu nas extremidades */
+    align-items: center;
+    width: 100%; /* Garante que a largura ocupe 100% da tela */
+    max-width: 1200px; /* Limita a largura máxima */
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #1e90ff;
+}
+
+/* Estilo do menu hambúrguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Seção de Depoimentos */
+.depoimentos {
+    padding: 100px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.depoimentos h1 {
+    font-size: 36px;
+    color: #232323;
+    margin-bottom: 20px;
+}
+
+.depoimentos p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.depoimento-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.depoimento {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.depoimento p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cliente {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cliente img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cliente p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Rodapé */
+footer {
+    background-color: #232323;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Esconde o menu por padrão na versão mobile */
+        flex-direction: column;
+        position: absolute;
+        background-color: #232323;
+        top: 60px; /* Distância do cabeçalho */
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 5;
+    }
+
+
+    .navbar.active ul {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada */
+    }
+
+    .navbar ul li a {
+        padding: 10px 0;
+        font-size: 20px;
+    }
+
+    .hamburger {
+        display: flex; /* Exibe o ícone do menu hambúrguer */
+    }
+
+    .depoimento-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .depoimento {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 20px;
+    }
+}
