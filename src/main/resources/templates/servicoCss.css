@@ -1,0 +1,197 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 60px; /* Compensa o cabeçalho fixo */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #232323;
+    color: white;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #1e90ff;
+}
+
+/* Ícone de Menu Hambúrguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 11;
+    position: absolute;
+    right: 20px; /* Mantém o hambúrguer à direita */
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s ease;
+}
+
+/* Quando o menu é ativado pelo hambúrguer */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+/* Seção de Serviços */
+.servicos {
+    padding: 100px 20px 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.servicos h1 {
+    font-size: 36px;
+    color: #232323;
+    margin-bottom: 20px;
+}
+
+.servicos p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.servico {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.servico-imagem img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+.servico-info h2 {
+    font-size: 24px;
+    color: #232323;
+    margin-bottom: 15px;
+}
+
+.servico-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Rodapé */
+footer {
+    background-color: #232323;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .servico {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servico-imagem img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 16px;
+    }
+
+    .servico-info h2 {
+        font-size: 20px;
+    }
+
+    .servico-info p {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
