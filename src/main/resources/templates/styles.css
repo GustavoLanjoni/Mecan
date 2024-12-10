@@ -66,7 +66,7 @@ header {
 }
 
 .menu li a:hover {
-    color: #f39c12;
+    color: #ff6600;
 }
 
 .btn-orcamento {
@@ -267,6 +267,8 @@ header {
     flex-wrap: wrap; /* Permite que os quadrados quebrem linha em telas menores */
     padding: 20px;
     background-color: #ffffff; /* Fundo do contêiner */
+    padding-bottom: 100px;
+
 }
 
 /* Estilo dos quadrados individuais */
@@ -293,6 +295,7 @@ header {
     height: auto;
     border-radius: 5px;
     margin-bottom: 15px;
+
 }
 
 /* Estilo para o título */
@@ -307,4 +310,301 @@ header {
     font-size: 16px;
     color: #666;
     line-height: 1.5;
+}
+
+/* Estiliza o container para posicionar os elementos corretamente */
+.container-service {
+    height: calc(100vh - 100px); /* Altura total da tela, subtraindo os espaços em cima e embaixo */
+    position: relative; /* Necessário para o posicionamento do texto */
+    color: white; /* Texto branco */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    background-image: url('carro1.jpg'); /* A imagem de fundo aqui */
+    background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
+    position: relative; /* Necessário para o posicionamento da pseudo-classe */
+}
+
+/* Pseudo-classe para aplicar o filtro de escurecimento à imagem */
+.container-service::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Herda a imagem de fundo do container */
+    background-size: inherit; /* Herda o tamanho da imagem */
+    background-position: inherit; /* Herda a posição da imagem */
+    background-attachment: inherit; /* Herda o comportamento de rolagem da imagem */
+    filter: brightness(0.1); /* Aplica o escurecimento à imagem */
+    z-index: 1; /* Coloca o filtro abaixo do conteúdo do texto */
+}
+
+/* Estiliza o texto sobre a imagem */
+.text-overlay {
+    position: relative;
+    z-index: 2; /* Coloca o texto acima da pseudo-classe */
+    color: white; /* Cor do texto */
+    text-align: center;
+}
+
+/* Espaços brancos acima e abaixo */
+.white-space {
+    width: 100%;
+    background-color: white; /* Fundo branco */
+}
+
+.top-space {
+    height: 50px; /* Altura do espaço branco acima */
+}
+
+.bottom-space {
+    height: 150px; /* Altura do espaço branco abaixo */
+}
+
+/* Estilo para o título */
+.h2-service {
+    font-size: 36px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar visibilidade */
+}
+
+/* Estilo para o subtítulo */
+.h5-service {
+    font-size: 18px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar visibilidade */
+}
+
+
+/* Estiliza o rodapé */
+.footer {
+    background-color: #222; /* Cor de fundo escura */
+    color: white; /* Cor do texto */
+    padding: 10px ; /* Espaçamento interno */
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+/* Container do rodapé */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que as seções se ajustem em telas menores */
+    gap: 40px;
+}
+
+/* Seção de informações do rodapé */
+.footer-info {
+    max-width: 250px;
+}
+
+.footer-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Seção de links rápidos */
+.footer-links h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção de redes sociais */
+.footer-social h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #1e90ff;
+}
+
+/* Rodapé Geral */
+.footer {
+    background-color: #232323; /* Fundo escuro */
+    color: #f2f2f2; /* Texto claro */
+    font-family: 'Arial', sans-serif;
+    padding: 60px 20px;
+    text-align: left;
+}
+
+/* Parte superior do rodapé */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Informações do rodapé */
+.footer-info {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-info h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.footer-contact p strong {
+    color: #fff;
+}
+
+/* Links úteis */
+.footer-links h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    font-size: 16px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #1e90ff;
+}
+
+/* Redes sociais */
+.footer-social h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #f2f2f2;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #1e90ff;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    width: 100%;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #bbb;
+    margin: 10px 0;
+}
+
+.footer-payment h4 {
+    font-size: 18px;
+    color: #fff;
+    
+    
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.payment-icons img {
+    width: 50px;
+    height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-links, .footer-social {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-info h2 {
+        font-size: 24px;
+    }
+
+    .footer-links ul li a, .footer-info p {
+        font-size: 14px;
+    }
 }
