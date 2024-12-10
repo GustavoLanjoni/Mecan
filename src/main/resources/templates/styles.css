@@ -1,362 +1,312 @@
-/* Reset básico */
-* {
+/* Garantir que o body e html ocupem toda a altura da tela */
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Resetar as margens e os paddings dos elementos para evitar inconsistências */
+* {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Cor de fundo mais escura para um visual moderno */
-    color: #fff;
-    padding-top: 80px; /* Ajuste do topo para o header fixo */
-    line-height: 1.6;
-}
-
-/* Header */
+/* Estilizando o cabeçalho */
 header {
-    background-color: #1a1a1a; /* Cor mais suave para o cabeçalho */
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #333; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaço entre a logo e o menu */
+    padding: 30px 20px; /* Reduzido para diminuir altura */
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: background-color 0.3s;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
-/* Container principal do header */
 .header-content {
+    display: flex;
+    justify-content: flex-end; /* Mover o menu para a direita */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    
+    max-width: 250px; /* Ajuste a largura máxima do logo */
+    height: auto; /* Mantém a proporção */
+    object-fit: contain; /* Ajusta o comportamento da imagem */
+    display: block;
+    
+
+}
+
+.menu-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Logo */
-.logo img {
-    height: 50px;
-    transition: transform 0.3s;
-}
-
-.logo img:hover {
-    transform: scale(1.1); /* Efeito de zoom no logo ao passar o mouse */
-}
-
-/* Menu container */
-.menu-container {
-    display: none; /* Esconde o menu por padrão no mobile */
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 70px;
-    left: 0;
     width: 100%;
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 999;
 }
 
-/* Menu visível quando ativo */
-.menu-container.active {
-    display: flex;
-}
-
-/* Lista de itens do menu */
 .menu {
     list-style: none;
-    text-align: center;
-    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .menu li {
-    margin: 10px 0;
+    margin: 0 20px;
 }
 
-.menu a {
+.menu li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
     font-size: 18px;
-    font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 4px;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.menu a:hover {
-    background-color: #ff5900;
-    color: #fff;
+.menu li a:hover {
+    color: #f39c12;
 }
 
-/* Botão de orçamento */
 .btn-orcamento {
-    font-size: 16px;
-    background-color: transparent;
-    border: 2px solid #ff5900;
-    color: #fd5900;
-    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-orcamento:hover {
-    color: #e65000;
-    transform: scale(1.05);
+    background-color: #e67e22;
 }
 
-/* Botão hambúrguer */
+/* Exibir o botão hambúrguer apenas em dispositivos móveis */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
+    display: none; /* Esconde o botão em telas maiores */
     cursor: pointer;
-    z-index: 1001;
+    z-index: 11;
+    position: relative; /* Mantém posição controlada */
 }
 
+/* Estilo das linhas do botão */
 .hamburger span {
     display: block;
-    width: 100%;
+    width: 30px;
     height: 4px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s ease;
 }
 
-/* Animação do hambúrguer ao ativar */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+.container-da-img {
+    background-color: #0c0c0c;
 }
 
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-}
-
-/* Imagem principal */
+/* Ajuste para imagem ocupar a tela inteira e texto sobreposto */
 .imgP {
-    background-position: center -20px; /* Menor valor para mover a imagem mais para cima */
     position: relative;
-    width: 100%; /* Ajuste a altura conforme necessário */
-    background-image: url('');
-    background-size: cover;
-    background-attachment: scroll;
-    margin-top: -50px; /* Move a imagem para cima em relação ao topo */
-    transform: scaleX(-1);
-    height: 900px;
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
-
-
-}
-
-
-.imgP img {
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.imgP .imagem img {
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 120%;
+    height: 100%;
     object-fit: cover;
-
+    z-index: 1;
 }
 
-/* Texto */
 .texto-img {
-    position: absolute; /* Permite posicionar no lado desejado */
-    top: 10%;
-    right: 5%; /* Move os textos para o lado direito da tela */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    color: #fff;
-    z-index: 10;
-    transform: scaleX(-1)
-    
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: white;
+    z-index: 2;
+    max-width: 600px;
 }
 
-.texto-img h1, .texto-img h2, .texto-img p {
-    margin-bottom: 15px;
+.texto-img h1, .texto-img h2 {
+    margin: 10px 0;
+}
+
+.texto-img p {
+    font-size: 20px;
+    margin: 10px 0;
 }
 
 .texto-img .btn-agendar {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
     font-size: 18px;
-    background-color: #ff5900;
-    color: #fff;
-    padding: 12px 30px;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .texto-img .btn-agendar:hover {
-    background-color: #e65000;
-    transform: scale(1.05);
+    background-color: #e67e22;
 }
 
-/* Container e botão agendar */
-.btn-agendar-container {
+/* Estilizando o conteúdo abaixo da imagem */
+.container {
     text-align: center;
-    margin-top: 30px;
+    padding: 50px 20px;
 }
 
-.btn-agendar {
-    font-size: 18px;
-    background-color: #ff5900;
-    border: none;
-    color: #fff;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+.h3-texto1 {
+    font-size: 36px;
+    color: #333;
 }
 
-.btn-agendar:hover {
-    background-color: #e65000;
-    transform: scale(1.05);
+.h5-texto2 {
+    font-size: 20px;
+    color: #666;
 }
 
-/* Media query para responsividade */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 15px;
-    }
-
-    .imgP {
-        height: 900px; /* Ajusta a altura da imagem para telas menores */
-        width: 900px;
-        margin-left: -2pc;
-        margin-top: -50px; /* Ajusta o espaço superior */
-        font-size: 2rem
-    }
-    
-    .imgP img {
-        object-fit: cover; /* Faz a imagem se ajustar ao tamanho do container */
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .btn-orcamento {
-
-        display: none;
-
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    /* Estilizando o cabeçalho para dispositivos móveis */
+    .header-content {
+        flex-direction: column;
+        align-items: flex-end; /* Move o conteúdo para a direita em dispositivos móveis */
     }
 
     .menu-container {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
         position: absolute;
-        right: 15px;
-        top: 15px;
-        z-index: 1001;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        z-index: 9;
+        padding: 10px 0;
     }
 
-    .texto-img {
-        left: 10%;
-    }
-
-    .texto-img h1 {
-        font-size: 1.5rem;
-    }
-
-    .texto-img h2 {
-        font-size: 1.2rem;
-    }
-
-    .texto-img p {
-        font-size: 0.8rem;
-    }
-
-    .btn-agendar {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .imgP {
-        height: 400px;
-    }
-}
-
-
-@media (min-width: 769px) {
-    .menu-container {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        box-shadow: none;
-        justify-content: flex-end;
-        width: auto;
-        padding: 0;
+    .menu-container.active {
+        display: flex; /* Mostra o menu quando a classe active é aplicada */
     }
 
     .menu {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
+        flex-direction: column;
+        width: 100%;
     }
 
     .menu li {
-        margin: 0;
+        margin: 10px 0;
     }
 
     .hamburger {
-        display: none;
+        display: block;
     }
 
-    .btn-agendar-container {
-        margin-top: 50px;
+    /* Animação do hambúrguer quando ativo */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0; /* Esconde a linha do meio */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .imgP {
+        height: 80vh; /* Reduzindo a altura da imagem em dispositivos móveis */
+    }
+
+    .imgP .imagem img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .texto-img h1, .texto-img h2, .texto-img p {
+        font-size: 16px;
+    }
+
+    .texto-img .btn-agendar {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .h3-texto1 {
+        font-size: 28px;
+    }
+
+    .h5-texto2 {
+        font-size: 16px;
     }
 }
 
-/* Espaçamento e alinhamento da seção de contato */
-.textoPrincipal h1 {
-    font-size: 2.2rem;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.textoPrincipal h1 a {
-    color: #ff5900;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.textoPrincipal h1 a:hover {
-    color: #e65000;
-}
-
-/* Botão de ação */
-.btn-agendar-container {
-    margin-top: 40px;
+/* Estilizando o contêiner dos quadrados */
+.quadrados-container {
     display: flex;
     justify-content: center;
+    gap: 20px; /* Espaçamento entre os quadrados */
+    flex-wrap: wrap; /* Permite que os quadrados quebrem linha em telas menores */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo do contêiner */
 }
 
-.btn-agendar {
-    font-size: 18px;
-    background-color: #ff5900;
-    color: #fff;
-    padding: 12px 30px;
+/* Estilo dos quadrados individuais */
+.quadrado {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Tamanho fixo para os quadrados */
+    text-align: center; /* Centraliza o texto e a imagem */
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.quadrado:hover {
+    transform: translateY(-10px); /* Elevação */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para a imagem dentro do quadrado */
+.quadrado img {
+    width: 65%;
+    height: auto;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 15px;
 }
 
-.btn-agendar:hover {
-    background-color: #e65000;
-    transform: scale(1.05);
+/* Estilo para o título */
+.quadrado h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
 }
 
-
+/* Estilo para o texto */
+.quadrado p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
