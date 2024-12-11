@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MecanicaApplication {
+public class MainApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MecanicaApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(MainApplication.class, args);
+    }
 }
