@@ -322,7 +322,7 @@ header {
     flex-direction: column;
     justify-content: center; /* Centraliza o conteúdo verticalmente */
     align-items: center; /* Centraliza o conteúdo horizontalmente */
-    background-image: url('/src/main/resources/static/img/carro1.jpg'); /* A imagem de fundo aqui */
+    background-image: url('/img/carro1.jpg'); /* A imagem de fundo aqui */
     background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
     background-position: center; /* Centraliza a imagem */
     background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
