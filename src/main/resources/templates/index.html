@@ -35,8 +35,18 @@
         </div>
     </header>
 
-    
-      
+    <!-- Pop-up de Cadastro -->
+<div id="popup-cadastro" class="popup">
+    <div class="popup-content">
+        <!-- Botão de Fechar (X) -->
+        <span class="close-btn" onclick="fecharPopup()">&times;</span>
+        <h2>Cadastre-se Agora!</h2>
+        <p>Você não está cadastrado em nosso site. Por favor, cadastre-se para acessar todos os recursos. (Caso for cadastro ignore clieque no X)</p>
+        <a href="/src/main/resources/templates/cadastro.html" class="btn-cadastro">Ir para Cadastro</a>
+    </div>
+</div>
+
+
       
 
    <div class="container-da-img">
@@ -152,8 +162,21 @@
 </footer>
 
 
+<script>
+    // Função para exibir o pop-up
+    window.onload = function() {
+        var popup = document.getElementById('popup-cadastro');
+        popup.classList.add('show'); // Exibe o pop-up adicionando a classe 'show'
+    }
 
-    
-    
+    // Função para fechar o pop-up
+    function fecharPopup() {
+        var popup = document.getElementById('popup-cadastro');
+        popup.classList.remove('show'); // Remove a classe 'show' para esconder o pop-up
+    }
+</script>
+
+
+
 </body>
 </html>

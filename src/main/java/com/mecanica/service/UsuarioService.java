@@ -1,13 +1,19 @@
 package com.mecanica.service;
 
-import org.springframework.stereotype.Service;
 import com.mecanica.model.Usuario;
+import com.mecanica.repository.UsuarioRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
 
+    private final UsuarioRepository usuarioRepository;
+
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
+
     public void salvarUsuario(Usuario usuario) {
-        // Aqui você pode salvar o usuário em um banco de dados ou realizar outras operações
-        System.out.println("Usuário salvo: " + usuario.getNome());
+        usuarioRepository.save(usuario);
     }
 }

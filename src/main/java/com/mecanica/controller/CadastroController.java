@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.mecanica.model.Usuario;
 import com.mecanica.service.UsuarioService;
 
-
 @Controller
 public class CadastroController {
 
@@ -16,6 +15,12 @@ public class CadastroController {
 
     public CadastroController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
+    }
+
+    // Mapeia a requisição GET para a página inicial (redireciona para o cadastro)
+    @GetMapping("/")
+    public String redirecionarParaCadastro() {
+        return "redirect:/cadastro";  // Redireciona para a página de cadastro
     }
 
     // Mapeia a requisição GET para exibir o formulário de cadastro
