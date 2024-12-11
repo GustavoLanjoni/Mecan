@@ -4,7 +4,9 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Previne o scroll horizontal */
 }
+
 
 /* Resetar as margens e os paddings dos elementos para evitar inconsistências */
 * {
@@ -130,9 +132,10 @@ header {
     transform: translateY(-50%);
     text-align: right;
     color: white;
-    z-index: 2;
+    z-index: 2; /* Este valor garante que o texto esteja acima da imagem */
     max-width: 600px;
 }
+
 
 .texto-img h1, .texto-img h2 {
     margin: 10px 0;
@@ -174,9 +177,12 @@ header {
     color: #666;
 }
 
-/* Responsividade para dispositivos móveis */
+
 /* Responsividade para dispositivos móveis */
 @media screen and (max-width: 768px) {
+    .container-service {
+        background-attachment: scroll; /* Desativa o efeito fixo em dispositivos móveis */
+    }
     /* Estilizando o cabeçalho para dispositivos móveis */
     .header-content {
         margin-left: 50%;
@@ -259,26 +265,23 @@ header {
 }
 
 
-/* Estilizando o contêiner dos quadrados */
 .quadrados-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaçamento entre os quadrados */
-    flex-wrap: wrap; /* Permite que os quadrados quebrem linha em telas menores */
+    gap: 20px;
+    flex-wrap: wrap;
     padding: 20px;
-    background-color: #ffffff; /* Fundo do contêiner */
+    background-color: #ffffff;
     padding-bottom: 100px;
-
 }
 
-/* Estilo dos quadrados individuais */
 .quadrado {
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Tamanho fixo para os quadrados */
-    text-align: center; /* Centraliza o texto e a imagem */
+    width: 300px;
+    text-align: center;
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

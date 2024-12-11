@@ -17,10 +17,10 @@ public class CadastroController {
         this.usuarioService = usuarioService;
     }
 
-    // Mapeia a requisição GET para a página inicial (redireciona para o cadastro)
+    // Mapeia a requisição GET para a página inicial (não redireciona mais para o cadastro)
     @GetMapping("/")
-    public String redirecionarParaCadastro() {
-        return "redirect:/cadastro";  // Redireciona para a página de cadastro
+    public String exibirPaginaPrincipal() {
+        return "index";  // Retorna a página principal
     }
 
     // Mapeia a requisição GET para exibir o formulário de cadastro

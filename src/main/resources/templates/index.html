@@ -17,10 +17,10 @@
             <!-- Menu -->
             <div class="menu-container">
                 <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="quemSomos.html">QUEM SOMOS</a></li>
-                    <li><a href="servicos.html">SERVIÇOS</a></li>
-                    <li><a href="depoimentos.html">DEPOIMENTOS</a></li>
+                    <li><a href="/" th:href="@{/}">HOME</a></li>
+                    <li><a href="/quemSomos" th:href="@{/quemSomos}">QUEM SOMOS</a></li>
+                    <li><a href="/servicos" th:href="@{/servicos}">SERVIÇOS</a></li>
+                    <li><a href="/depoimentos" th:href="@{/depoimentos}">DEPOIMENTOS</a></li>
                 </ul>
                 <!-- Botão de Orçamento dentro do menu -->
                 <a href="/orcamento" class="btn-orcamento">ORÇAMENTO RÁPIDO</a>
@@ -35,18 +35,16 @@
         </div>
     </header>
 
-    <!-- Pop-up de Cadastro -->
+ <!-- Pop-up de Cadastro -->
 <div id="popup-cadastro" class="popup">
     <div class="popup-content">
         <!-- Botão de Fechar (X) -->
         <span class="close-btn" onclick="fecharPopup()">&times;</span>
         <h2>Cadastre-se Agora!</h2>
         <p>Você não está cadastrado em nosso site. Por favor, cadastre-se para acessar todos os recursos. (Caso for cadastro ignore clieque no X)</p>
-        <a href="cadastro.html" class="btn-cadastro">Ir para Cadastro</a>
+        <a href="/cadastro.html" class="btn-cadastro">Ir para Cadastro</a>
     </div>
 </div>
-
-
       
 
    <div class="container-da-img">
@@ -56,7 +54,7 @@
                 <h2>Serviços e Acessórios</h2>
                 <p>NA ELETRICAR, ESTAMOS COMPROMETIDOS EM GANHAR SUA CONFIANÇA, FORNECENDO SERVIÇOS DE REPAROS DE AUTOMÓVEIS DE MAIS ALTA QUALIDADE A UM PREÇO JUSTO.</p>
                 <h1>(17)99628-9344</h1>
-                <button class="btn-agendar">AGENDAR AGORA</button>
+                <a href="/agendamento.html" class="btn-agendar">AGENDAR AGORA</a>
             </div>
             <div class="imagem">
                 <img src="/img/carro.jpg" alt="Carro">
